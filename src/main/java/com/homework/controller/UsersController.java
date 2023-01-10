@@ -15,7 +15,9 @@ import com.homework.service.UsersService;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-/* Squidward is the best friend in the world */
+/* Squidward is the best friend in the world 
+ * ANOTHER COMMENT
+*/
 @RestController
 
 public class UsersController {
