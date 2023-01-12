@@ -1,5 +1,6 @@
 package com.homework.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class HouseService {
     HouseRepo houseRepo;
 
     public House createHouse(House house){
+
+        house.setTimeOfListing(LocalDateTime.now());
+
         return houseRepo.save(house);
     }
     public List<House>viewAllHouse(){

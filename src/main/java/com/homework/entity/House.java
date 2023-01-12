@@ -1,5 +1,7 @@
 package com.homework.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,6 +50,12 @@ public class House {
 
     @Column(name="sold")
     private boolean sold;
+
+    @Column(name="time_of_listing")
+    private LocalDateTime timeOfListing;
+
+    @Column(name="time_sold")
+    private LocalDateTime timeSold;
 
     public House() {
     }
@@ -144,12 +152,28 @@ public class House {
         this.sold = sold;
     }
 
+    public LocalDateTime getTimeOfListing() {
+        return timeOfListing;
+    }
+
+    public void setTimeOfListing(LocalDateTime timeOfListing) {
+        this.timeOfListing = timeOfListing;
+    }
+
+    public LocalDateTime getTimeSold() {
+        return timeSold;
+    }
+
+    public void setTimeSold(LocalDateTime timeSold) {
+        this.timeSold = timeSold;
+    }
+
     @Override
     public String toString() {
         return "House [id=" + id + ", houseNumber=" + houseNumber + ", streetName=" + streetName + ", city=" + city
                 + ", state=" + state + ", zipCode=" + zipCode + ", price=" + price + ", numOfBeds=" + numOfBeds
                 + ", numOfBaths=" + numOfBaths + ", squareFeet=" + squareFeet + ", forSale=" + forSale + ", sold="
-                + sold + "]";
+                + sold + ", timeOfListing=" + timeOfListing + ", timeSold=" + timeSold + "]";
     }
 
     
