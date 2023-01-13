@@ -51,6 +51,13 @@ public class House {
     @Column(name="sold")
     private boolean sold;
 
+    @Column(name="for_rent")
+    private boolean forRent;
+
+    @Column(name="rented")
+    private boolean rented;
+
+
     @Column(name="time_of_listing")
     private LocalDateTime timeOfListing;
 
@@ -168,12 +175,29 @@ public class House {
         this.timeSold = timeSold;
     }
 
+    public boolean isForRent() {
+        return forRent;
+    }
+
+    public void setForRent(boolean forRent) {
+        this.forRent = forRent;
+    }
+
+    public boolean isRented() {
+        return rented;
+    }
+
+    public void setRented(boolean rented) {
+        this.rented = rented;
+    }
+
     @Override
     public String toString() {
         return "House [id=" + id + ", houseNumber=" + houseNumber + ", streetName=" + streetName + ", city=" + city
                 + ", state=" + state + ", zipCode=" + zipCode + ", price=" + price + ", numOfBeds=" + numOfBeds
                 + ", numOfBaths=" + numOfBaths + ", squareFeet=" + squareFeet + ", forSale=" + forSale + ", sold="
-                + sold + ", timeOfListing=" + timeOfListing + ", timeSold=" + timeSold + "]";
+                + sold + ", forRent=" + forRent + ", rented=" + rented + ", timeOfListing=" + timeOfListing
+                + ", timeSold=" + timeSold + "]";
     }
 
     
