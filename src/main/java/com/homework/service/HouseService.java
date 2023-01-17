@@ -25,6 +25,9 @@ public class HouseService {
     public List<House>viewAllHouse(){
         return houseRepo.findAll();
     }
+    public List<House>viewAllHousesForSale(){
+        return houseRepo.findForSale();
+    }
     public House getByHouseId(Integer id){
         return houseRepo.findById(id).get();
     }

@@ -57,12 +57,14 @@ public class House {
     @Column(name="rented")
     private boolean rented;
 
-
     @Column(name="time_of_listing")
     private LocalDateTime timeOfListing;
 
     @Column(name="time_sold")
     private LocalDateTime timeSold;
+
+    @Column(name="picture")
+    private String picture;
 
     public House() {
     }
@@ -189,6 +191,14 @@ public class House {
 
     public void setRented(boolean rented) {
         this.rented = rented;
+    }  
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     @Override
@@ -197,7 +207,7 @@ public class House {
                 + ", state=" + state + ", zipCode=" + zipCode + ", price=" + price + ", numOfBeds=" + numOfBeds
                 + ", numOfBaths=" + numOfBaths + ", squareFeet=" + squareFeet + ", forSale=" + forSale + ", sold="
                 + sold + ", forRent=" + forRent + ", rented=" + rented + ", timeOfListing=" + timeOfListing
-                + ", timeSold=" + timeSold + "]";
+                + ", timeSold=" + timeSold + ", picture=" + picture + "]";
     }
 
     

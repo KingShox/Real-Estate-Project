@@ -66,6 +66,25 @@ public class HouseController {
         }
     }
     @RequestMapping(
+        value = "/viewHousesForSale",
+        produces = MediaType.APPLICATION_JSON_VALUE,
+        method = RequestMethod.GET
+    )
+    public ResponseEntity<Object> viewHousesForSale(){
+        try{
+            List<House> viewAllHouses = houseService.viewAllHousesForSale();
+
+            return new ResponseEntity<>(viewAllHouses, HttpStatus.FOUND);
+
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        } catch(Error e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @RequestMapping(
         value = "/getByHouseId/{houseId}",
         produces = MediaType.APPLICATION_JSON_VALUE,
         method = RequestMethod.GET
