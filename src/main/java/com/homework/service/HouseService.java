@@ -37,7 +37,7 @@ public class HouseService {
 
          for (House house: forSale){
             if (house.getTimeOfListing().isBefore(ninetyDays()))
-            forSaleOverNinety.add(house);
+                forSaleOverNinety.add(house);
          }
          return forSaleOverNinety;
     }
@@ -48,7 +48,7 @@ public class HouseService {
 
         for (House house: forSale){
            if (!house.getTimeOfListing().isBefore(ninetyDays()))
-           forSaleUnderNinety.add(house);
+               forSaleUnderNinety.add(house);
         }
         return forSaleUnderNinety;
    }
